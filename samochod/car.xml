@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Cars>
+  <Car>
+    <Date>06.01.2009</Date>
+    <FuelLiters>1</FuelLiters>
+    <FuelPrice>1</FuelPrice>
+    <AdditionalFuelLiters>1</AdditionalFuelLiters>
+    <AdditionalFuelPrice>1</AdditionalFuelPrice>
+    <Kilometers>1</Kilometers>
+  </Car>
+</Cars>

@@ -80,9 +80,9 @@ namespace samochod
                 AverageFuelPrice += car.FuelPrice;
             }
             AverageAdditionalFuel = (AverageAdditionalFuel / TotalKilometers) * 100;
-            AverageAdditionalFuelPrice = (AverageAdditionalFuelPrice / TotalKilometers) * 100;
+            AverageAdditionalFuelPrice = (AverageAdditionalFuelPrice / TotalKilometers) *100;
             AverageFuel = (AverageFuel / TotalKilometers)*100;
-            AverageFuelPrice = (AverageFuelPrice / TotalKilometers) * 100;
+            AverageFuelPrice = (AverageFuelPrice / TotalKilometers)*100;
         }
         public Month(int s)
         {

@@ -25,7 +25,9 @@ namespace samochod
     public partial class MainWindow : Window
     {
         private List<Car> tab = new List<Car>();
-        private string filePath = @"..\..\Data\car.xml";
+        private string filePath;
+
+        
         private XElement element;
         private ObservableCollection<Year> years = new ObservableCollection<Year>();
 
@@ -36,6 +38,8 @@ namespace samochod
         }
         private void InitializeCollections()
         {
+            filePath = AppDomain.CurrentDomain.BaseDirectory;
+            filePath += @"\Data\car.xml";
             if(File.Exists(filePath))
             {
                 if (new FileInfo(filePath) != null)
@@ -57,7 +61,7 @@ namespace samochod
         }
         private void CreateXml()
         {
-
+            Directory.CreateDirectory(AppDomain.CurrentDomain.BaseDirectory + @"\Data");
             File.Create(filePath).Dispose();
 
             element = new XElement("Cars",
@@ -249,17 +253,17 @@ namespace samochod
                 if (temp != null)
                 {
                     string s = temp.AverageFuel.ToString("0.00");
-                    s += " [l/km]";
+                    s += " [l/100km]";
                     txtAvarageFuel.Text = s;
                     s = temp.AverageAdditionalFuel.ToString("0.00");
-                    s += " [l/km]";
+                    s += " [l/100km]";
                     txtAvarageAdditionalFuel.Text = s;
 
                     s = temp.AverageFuelPrice.ToString("0.00");
-                    s += " [zł/km]";
+                    s += " [zł/100km]";
                     txtAvarageFuelPrice.Text = s;
                     s = temp.AverageAdditionalFuelPrice.ToString("0.00");
-                    s += " [zł/km]";
+                    s += " [zł/100km]";
                     txtAvarageAdditionalFuelPrice.Text = s;
 
                     s = temp.TotalKilometers.ToString("0.00");
